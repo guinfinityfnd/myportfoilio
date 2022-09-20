@@ -142,38 +142,39 @@
             <!-- <button class="btn btn-info d-block">Download CV</button> -->
         </div>
       </div>
-     </div>
+     </div><br>
     <!-- /.content-header -->
 
     <!-- Main content -->
-      <div class="container">
+      <div class="container bg-dark rounded">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-12">
-          <div class="col">
+          <div class="col p-3">
             <img src="./photo/dell-7Bmk9mAXP2I-unsplash.jpg" alt="about" width="100%" height="auto">
           </div>
-          <div class="col">
+          <div class="col d-flex flex-column justify-content-around">
             <p class="content">
-              <div>
+              <div class="btn btn-primary">
                 <details>
                   <summary>Position</summary>
                   <p class="text-info"><i class="fa fa-user">-----Web Developing-----</i></p>
                 </details>
               </div>
-              <div>
+              <div class="btn btn-primary">
                 <details>
                   <summary>Age</summary>
                   <p class="text-info"><i class="fa fa-user">-------22-------</i></p>
                 </details>
               </div>
-              <div>
+              <div class="btn btn-primary">
                 <details>
                   <summary>Gender</summary>
                   <p class="text-info"><i class="fa fa-male"> ------Male------</i></p>
                 </details>
               </div>
-              I am a <b><i>freelancer</i></b>.I wrote many site for myself:).I am going to learning many teches concerned with website and webapp <b>developing.</b>
-           </p>
+            </p>
           </div>
+          <p class="text-success aboutme-text" style="font-family: 'Tangerine', serif; text-shadow: 4px 4px 4px #aaa;">
+          </p>
         </div>
   </div>
       </div><!-- /.container-fluid -->
@@ -226,6 +227,23 @@
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<!-- <script src="dist/js/pages/dashboard.js"></script> -->
+<script>
+  let index =0;
+  let speed = 100;
+  let write = `
+  I am a freelancer. I wrote many site for myself:).I am going to learning many teches concerned with website and webapp developing.
+  `;
+  const p = document.querySelector('.aboutme-text');
+  window.onload = function autoWrite() {
+  if (index < write.length) {
+    // p.innerHTML = write;
+      p.innerHTML += write.charAt(index);
+      index++;
+      // autoWrite();
+      setTimeout(autoWrite,speed);
+    }
+  }
+</script>
 </body>
 </html>
